@@ -1,0 +1,22 @@
+critical_fields: [vendor_name, invoice_number, invoice_date, total]
+
+tolerance:                 # over-billing vs the PO's REMAINING net balance
+  auto_pct: 2.0            # <= 2%  -> pass (with a note)
+  review_pct: 5.0          # 2-5%   -> NEEDS_REVIEW ; > 5% -> REJECT (dispute)
+
+vendor_match:
+  accept: 90               # rapidfuzz token_set_ratio >= 90 -> matched
+  ambiguous_low: 75        # 75-90 -> NEEDS_REVIEW (could be a lookalike); < 75 -> unknown vendor
+
+duplicates:
+  near_total_pct: 0.5      # totals within 0.5%
+  near_window_days: 14     # invoice dates within 14 days
+  near_desc_similarity: 0.80  # description similarity (0-1) if no shared PO ref
+
+implied_po:                # used only when the invoice prints no PO reference
+  min_confidence: 0.80
+  min_margin: 0.20         # best score must beat runner-up by this much
+  weights: {amount: 0.5, description: 0.3, recency: 0.2}
+
+extraction:
+  reconcile_abs_tolerance: 0.02   # rounding slack when reconciling totals

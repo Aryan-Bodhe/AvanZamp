@@ -1,0 +1,13 @@
+po_number,vendor_id,description,net_amount,tax_rate,currency,status,issue_date
+PO-1001,V001,Office furniture - Q4 order,4800,0.08,USD,open,2026-09-01
+PO-1002,V002,Managed IT services - November,12500,0.10,USD,open,2026-09-01
+PO-1003,V003,Freight - warehouse transfer,2000,0.08,USD,open,2026-09-01
+PO-1004,V004,Facilities maintenance - Q4,7500,0.08,USD,open,2026-09-01
+PO-1005,V005,Strategy consulting engagement,18000,0.08,USD,open,2026-09-01
+PO-2001,V006,Cloud platform migration (3 milestones),30000,0.08,USD,open,2026-09-01
+PO-3001,V007,Printed brochures - product launch,2400,0.08,USD,open,2026-09-01
+PO-4001,V008,Q4 team offsite catering,3000,0.08,USD,open,2026-09-01
+PO-4002,V008,Monthly pantry supplies - November,1200,0.08,USD,open,2026-09-01
+PO-9001,V001,Paper replenishment,500,0.08,USD,open,2026-09-01
+PO-9002,V002,Hardware support,1500,0.10,USD,open,2026-09-01
+PO-9003,V003,Freight - old order,1000,0.08,USD,closed,2026-09-01

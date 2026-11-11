@@ -1,0 +1,8 @@
+*
+!requirements.lock
+!invoicedesk/
+!invoicedesk/**
+!migrations/
+!migrations/**
+!alembic.ini
+!policy.yaml

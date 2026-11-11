@@ -1,0 +1,100 @@
+[
+  {
+    "file": "01_clean_exact.pdf",
+    "order": 1,
+    "expected_outcome": "AUTO_APPROVE",
+    "expected_path": "deterministic",
+    "expected_driving_checks": []
+  },
+  {
+    "file": "02_tax_inclusive.pdf",
+    "order": 2,
+    "expected_outcome": "AUTO_APPROVE",
+    "expected_path": "deterministic",
+    "expected_driving_checks": []
+  },
+  {
+    "file": "03_within_tolerance.pdf",
+    "order": 3,
+    "expected_outcome": "AUTO_APPROVE",
+    "expected_path": "deterministic",
+    "expected_driving_checks": []
+  },
+  {
+    "file": "04_over_tolerance.pdf",
+    "order": 4,
+    "expected_outcome": "NEEDS_REVIEW",
+    "expected_path": "deterministic",
+    "expected_driving_checks": [
+      "amount_vs_balance"
+    ]
+  },
+  {
+    "file": "05_blocked_vendor.pdf",
+    "order": 5,
+    "expected_outcome": "REJECT",
+    "expected_path": "deterministic",
+    "expected_driving_checks": [
+      "vendor_status"
+    ]
+  },
+  {
+    "file": "06_split_po_1of3.pdf",
+    "order": 6,
+    "expected_outcome": "AUTO_APPROVE",
+    "expected_path": "deterministic",
+    "expected_driving_checks": []
+  },
+  {
+    "file": "09_near_duplicate.pdf",
+    "order": 7,
+    "expected_outcome": "NEEDS_REVIEW",
+    "expected_path": "llm_text",
+    "expected_driving_checks": [
+      "duplicate_near"
+    ]
+  },
+  {
+    "file": "07_split_po_2of3.pdf",
+    "order": 8,
+    "expected_outcome": "AUTO_APPROVE",
+    "expected_path": "deterministic",
+    "expected_driving_checks": []
+  },
+  {
+    "file": "08_split_po_3of3_overbill.pdf",
+    "order": 9,
+    "expected_outcome": "REJECT",
+    "expected_path": "deterministic",
+    "expected_driving_checks": [
+      "amount_vs_balance"
+    ]
+  },
+  {
+    "file": "10_missing_invoice_number.pdf",
+    "order": 10,
+    "expected_outcome": "HOLD_MISSING_INFO",
+    "expected_path": "llm_text",
+    "expected_driving_checks": [
+      "completeness"
+    ]
+  },
+  {
+    "file": "11_scanned_implied_po.pdf",
+    "order": 11,
+    "expected_outcome": "NEEDS_REVIEW",
+    "expected_path": "llm_vision",
+    "expected_driving_checks": [
+      "stacked_uncertainty"
+    ]
+  },
+  {
+    "file": "12_exact_duplicate.pdf",
+    "order": 12,
+    "expected_outcome": "REJECT",
+    "expected_path": "deterministic",
+    "expected_driving_checks": [
+      "duplicate_exact"
+    ]
+  }
+]

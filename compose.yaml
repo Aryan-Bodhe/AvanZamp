@@ -1,0 +1,80 @@
+x-app: &app
+  build: .
+  env_file: .env.pilot
+  environment:
+    DOCUMENT_ROOT: /private/documents
+    LOG_TO_FILE: "false"
+    LOG_TO_CONSOLE: "true"
+  read_only: true
+  tmpfs:
+    - /tmp:size=128m,noexec,nosuid
+  user: '10001:10001'
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  pids_limit: 128
+  mem_limit: 1g
+  cpus: 1.0
+  restart: unless-stopped
+  volumes:
+    - documents:/private/documents
+    - extraction-cache:/private/extraction-cache
+  depends_on:
+    db:
+      condition: service_healthy
+services:
+  db:
+    image: postgres:17.6
+    env_file: .env.pilot
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 1g
+  migrate:
+    <<: *app
+    command: [alembic, upgrade, head]
+    restart: 'no'
+  api:
+    <<: *app
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health/ready',timeout=3)"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+    # Health checks use localhost; API also allows that name for health only via deployment middleware.
+  worker:
+    <<: *app
+    command: [python, -m, invoicedesk.interfaces.worker]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: [CMD, python, -m, invoicedesk.interfaces.operations, worker-health]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  proxy:
+    image: caddy:2.10.2
+    env_file: .env.pilot
+    ports: ['80:80', '443:443']
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      api:
+        condition: service_started
+    restart: unless-stopped
+volumes:
+  postgres:
+  documents:
+  extraction-cache:
+  caddy-data:
+  caddy-config:

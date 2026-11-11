@@ -1,0 +1,9 @@
+vendor_id,name,status,aliases_json,notes
+V001,Northwind Office Supplies Ltd,approved,"[""Northwind Office Supplies""]",
+V002,Brightline IT Services Inc,approved,[],
+V003,Apex Logistics LLC,approved,[],
+V004,Meridian Facilities Co,approved,[],
+V005,Orion Consulting Group,blocked,[],"Bank details changed 2026-10-28, pending re-verification"
+V006,Cobalt Cloud Hosting Inc,approved,[],
+V007,Summit Print & Packaging,approved,[],
+V008,Greenfield Catering Co,approved,[],

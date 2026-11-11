@@ -1,0 +1,76 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 893 >>
+stream
+0.07 0.20 0.29 rg 0 690 612 102 re f
+BT /F1 12 Tf 65 750 Td
+1 1 1 rg
+(Vendor: Brightline IT Services Inc) Tj
+0 -32 Td
+1 1 1 rg
+(INVOICE | Accounts payable) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(22 Commerce Avenue, New York, NY 10001) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(Bill to: Acme Operations Inc) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(Invoice date: 2026-10-20) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(Document ref: BIT-7731) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(Your order: PO-1002) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(Currency: USD) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(Re: Managed IT services - November) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(Item: Managed IT services - November | 1 | 12500.00 | 12500.00) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(VAT incl.: 1250.00) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(Amount due: 13750.00) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(Payment terms: Net 30) Tj
+0 -32 Td
+0.12 0.17 0.22 rg
+(Thank you for your business.) Tj
+0 -32 Td
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1255
+%%EOF

@@ -1,0 +1,1 @@
+"""InvoiceDesk application package."""

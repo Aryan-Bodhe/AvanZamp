@@ -1,0 +1,6 @@
+{
+  "version": "holdout-v1",
+  "provenance": "REPLACE: human-labeled anonymized real documents",
+  "release_min_cases": 30,
+  "cases": []
+}

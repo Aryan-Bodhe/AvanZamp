@@ -1,0 +1,1 @@
+"""InvoiceDesk domain package."""
